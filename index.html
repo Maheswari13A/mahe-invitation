@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mahe Udan Atti Vidu</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         BEACH ATMOSPHERE
+    ======================================== -->
+
+    <div class="sun"></div>
+    <div class="ocean-glow"></div>
+
+
+    <!-- ========================================
+         PALM TREES
+    ======================================== -->
+
+    <div class="palm palm-left">🌴</div>
+    <div class="palm palm-right">🌴</div>
+
+
+    <!-- ========================================
+         FLOATING NAMES
+         ONLY ONE CONTAINER
+    ======================================== -->
+
+   
+
+
+    <!-- ========================================
+         MAIN CARD
+    ======================================== -->
+ <div class="floating-names" id="floatingNames"></div>
+    <div class="card">
+
+        <!-- ====================================
+             PAGE 1
+        ==================================== -->
+
+        <div id="questionScreen">
+
+            <div class="small-wave">
+                〰️
+            </div>
+
+            <h1>
+                Are You Available
+                <br>
+                <span>on October 10?</span>
+            </h1>
+
+            <p class="sub-text">
+                A little beachside celebration awaits... 🌊
+            </p>
+
+            <div class="buttons">
+
+                <button id="yesBtn">
+                    Yes 🎂
+                </button>
+
+                <button id="noBtn">
+                    No 😜
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ====================================
+             PAGE 2
+        ==================================== -->
+
+        <div id="answerScreen">
+
+            <div class="wave-icon">
+                🌊
+            </div>
+
+            <div id="answer">
+                Yay! See you There..😜
+            </div>
+
+            <button id="whereBtn">
+                Where Mahee? 📍
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         PAGE 3
+         FINAL IMAGE / BEACH PAGE
+
+         Ocean and dolphins exist ONLY here.
+    ======================================== -->
+
+    <div id="secondPage">
+
+        <!-- ====================================
+             OCEAN + DOLPHINS
+        ==================================== -->
+
+        <div
+            class="dolphin-ocean"
+            id="dolphinOcean"
+        >
+
+            <!-- Main moving ocean -->
+            <div class="ocean-water"></div>
+
+            <!-- Wave layers -->
+            <div class="ocean-wave wave-one"></div>
+
+            <div class="ocean-wave wave-two"></div>
+
+            <div class="ocean-wave wave-three"></div>
+
+
+            <!-- IMPORTANT:
+                 JavaScript adds dolphins here -->
+            <div id="dolphins"></div>
+
+        </div>
+
+
+        <!-- ====================================
+             LOCATION CARD
+        ==================================== -->
+
+        <div
+            class="second-card"
+            id="locationCard"
+        >
+
+            <h2>
+
+                <span class="pink-text">
+                    Yay! See you at:
+                </span>
+
+                <br>
+
+                <span class="blue-text"></span>
+
+            </h2>
+
+
+            <!-- IMAGE REVEAL BUTTON -->
+
+            <button id="imageRevealBtn">
+
+                <span class="wave">
+                    🌊
+                </span>
+
+                <span>
+                    Click Me
+                </span>
+
+            </button>
+
+
+            <!-- =================================
+                 IMAGE
+            ================================== -->
+
+            <div id="imageContainer">
+
+                <img
+                    id="locationImage"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfvlwemrmtWzMu1neBUvjcCZ7WKwWOMGHMPvEHGp5JWw&s=10"
+                    alt="Beach location"
+                >
+
+            </div>
+
+
+            <!-- =================================
+                 LOVE MESSAGE
+            ================================== -->
+
+            <div id="loveMessage">
+                With Love: Mahe ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

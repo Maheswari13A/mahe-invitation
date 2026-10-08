@@ -1,0 +1,1474 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    color: white;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8b195 0%,
+            #f67280 18%,
+            #c06c84 35%,
+            #355c7d 62%,
+            #17445a 100%
+        );
+}
+
+
+/* ========================================
+   SUN
+======================================== */
+
+.sun {
+
+    position: fixed;
+
+    width: 170px;
+
+    height: 170px;
+
+    border-radius: 50%;
+
+    top: 10%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            #fff6c7 0%,
+            #ffd98e 40%,
+            rgba(255, 190, 120, 0) 72%
+        );
+
+    filter: blur(2px);
+
+    opacity: 0.9;
+
+    z-index: 0;
+}
+
+
+/* ========================================
+   ORIGINAL OCEAN GLOW
+======================================== */
+
+.ocean-glow {
+
+    position: fixed;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 45%;
+
+    background:
+        repeating-linear-gradient(
+            175deg,
+            rgba(255, 255, 255, 0.08) 0px,
+            rgba(255, 255, 255, 0.08) 2px,
+            transparent 2px,
+            transparent 25px
+        );
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* ========================================
+   PALM TREES
+======================================== */
+
+.palm {
+
+    position: fixed;
+
+    z-index: 2;
+
+    font-size: 130px;
+
+    opacity: 0.22;
+
+    filter: grayscale(1);
+
+    pointer-events: none;
+}
+
+
+.palm-left {
+
+    left: -35px;
+
+    bottom: 20px;
+
+    transform:
+        rotate(-8deg)
+        scaleX(-1);
+}
+
+
+.palm-right {
+
+    right: -35px;
+
+    bottom: 10px;
+
+    transform:
+        rotate(8deg);
+}
+
+
+/* ========================================
+   FLOATING NAMES
+======================================== */
+
+.floating-names {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    /*
+       Above Page 3 background,
+       but below the cards.
+    */
+    z-index: 30;
+}
+
+
+.floating-name {
+
+    position: absolute;
+
+    bottom: -60px;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.25);
+
+    white-space: nowrap;
+
+    animation:
+        nameFloat linear forwards;
+}
+
+
+@keyframes nameFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(-4deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 0.5;
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            translateX(40px)
+            rotate(4deg);
+
+        opacity: 0.7;
+    }
+
+    90% {
+
+        opacity: 0.45;
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            translateX(-30px)
+            rotate(-3deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   MAIN CARD
+======================================== */
+
+.card {
+
+    position: relative;
+
+    z-index: 40;
+
+    width: 90%;
+
+    max-width: 520px;
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background:
+        rgba(50, 80, 105, 0.85);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* ========================================
+   COMMON FONT
+======================================== */
+
+h1,
+#answer,
+button,
+.second-card h2,
+.second-card p {
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+}
+
+
+/* ========================================
+   SMALL WAVE
+======================================== */
+
+.small-wave {
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.9;
+
+    animation:
+        waveFloat 2s ease-in-out infinite;
+}
+
+
+/* ========================================
+   MAIN HEADING
+======================================== */
+
+h1 {
+
+    font-size: 45px;
+
+    font-weight: 600;
+
+    line-height: 1.12;
+
+    letter-spacing: 1px;
+
+    color: white;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.2);
+
+    margin-bottom: 18px;
+}
+
+
+h1 span {
+
+    color: #fff4d6;
+}
+
+
+/* ========================================
+   SUB TEXT
+======================================== */
+
+.sub-text {
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+    margin-bottom: 32px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 60px;
+}
+
+
+button {
+
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 13px 30px;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ========================================
+   YES BUTTON
+======================================== */
+
+#yesBtn {
+
+    color: #17445a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8df,
+            #ffdca8
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+#yesBtn:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.06);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   NO BUTTON
+======================================== */
+
+#noBtn {
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.4);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    position: relative;
+
+    transition:
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+#noBtn:hover {
+
+    transform: scale(1.02);
+}
+
+
+/* ========================================
+   ANSWER SCREEN
+======================================== */
+
+#answerScreen {
+
+    display: none;
+
+    text-align: center;
+}
+
+
+.wave-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    animation:
+        waveFloat 2s ease-in-out infinite;
+}
+
+
+#answer {
+
+    font-size: 43px;
+
+    font-weight: 600;
+
+    color: white;
+
+    line-height: 1.2;
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.2);
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   WHERE MAHEE BUTTON
+======================================== */
+
+#whereBtn {
+
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    color: #fff4d6;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+#whereBtn:hover {
+
+    transform: scale(1.1);
+
+    color: white;
+}
+
+
+/* ========================================
+   PAGE 3
+======================================== */
+
+#secondPage {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 20;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8b195 0%,
+            #f67280 25%,
+            #c06c84 45%,
+            #355c7d 75%,
+            #17445a 100%
+        );
+}
+
+
+/* ========================================
+   SECOND CARD
+======================================== */
+
+.second-card {
+
+    position: relative;
+
+    z-index: 40;
+
+    width: 90%;
+
+    max-width: 560px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px 30px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* ========================================
+   SECOND PAGE HEADING
+======================================== */
+
+.second-card h2 {
+
+    font-size: 43px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+
+.pink-text {
+
+    color: #fff4d6;
+}
+
+
+.blue-text {
+
+    color: #d8f6ff;
+}
+
+
+/* ========================================
+   IMAGE REVEAL BUTTON
+======================================== */
+
+#imageRevealBtn {
+
+    display: inline-flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    box-shadow: none;
+
+    padding: 10px 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+#imageRevealBtn:hover {
+
+    transform: scale(1.12);
+}
+
+
+#imageRevealBtn .wave {
+
+    font-size: 58px;
+
+    display: block;
+
+    animation:
+        waveFloat 1.5s ease-in-out infinite;
+}
+
+
+/* ========================================
+   IMAGE CONTAINER
+======================================== */
+
+#imageContainer {
+
+    display: none;
+
+    width: 100%;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   LOCATION IMAGE
+======================================== */
+
+#locationImage {
+
+    width: 380px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 0 auto;
+
+    border-radius: 20px;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.5);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    animation:
+        imageAppear 0.7s ease forwards;
+}
+
+
+/* ========================================
+   LOVE MESSAGE
+======================================== */
+
+#loveMessage {
+
+    display: none;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        "Times New Roman",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #fff4d6;
+
+    text-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.3);
+
+    animation:
+        loveAppear 1s ease forwards;
+}
+
+
+/* ========================================
+   IMAGE ONLY MODE
+======================================== */
+
+#secondPage.image-only .second-card {
+
+    width: auto;
+
+    max-width: none;
+
+    max-height: none;
+
+    padding: 0;
+
+    overflow: visible;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    -webkit-backdrop-filter: none;
+}
+
+
+/* ========================================
+   HIDE OLD CONTENT
+======================================== */
+
+#secondPage.image-only .second-card h2,
+#secondPage.image-only #imageRevealBtn {
+
+    display: none;
+}
+
+
+/* ========================================
+   IMAGE ONLY MODE
+======================================== */
+
+#secondPage.image-only #imageContainer {
+
+    display: flex;
+}
+
+
+#secondPage.image-only #loveMessage {
+
+    display: block;
+}
+
+
+/* ========================================
+   PAGE 3 OCEAN
+======================================== */
+
+#secondPage .dolphin-ocean {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 25;
+}
+
+
+/* ========================================
+   OCEAN WATER
+======================================== */
+
+#secondPage .ocean-water {
+
+    position: absolute;
+
+    left: -10%;
+
+    bottom: -3%;
+
+    width: 120%;
+
+    height: 38%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(40, 190, 210, 0.15) 0%,
+            rgba(0, 130, 180, 0.42) 35%,
+            rgba(0, 65, 120, 0.78) 100%
+        );
+
+    border-radius:
+        50% 50% 0 0 /
+        18% 18% 0 0;
+
+    animation:
+        oceanBreathing 5s ease-in-out infinite;
+}
+
+
+/* ========================================
+   OCEAN WAVE LAYERS
+======================================== */
+
+#secondPage .ocean-wave {
+
+    position: absolute;
+
+    left: -15%;
+
+    width: 130%;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform-origin: center;
+}
+
+
+/* WAVE ONE */
+
+#secondPage .wave-one {
+
+    bottom: 28%;
+
+    height: 180px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,0.22) 0%,
+            rgba(130,230,240,0.15) 35%,
+            transparent 70%
+        );
+
+    filter: blur(3px);
+
+    animation:
+        oceanWave1 8s ease-in-out infinite;
+}
+
+
+/* WAVE TWO */
+
+#secondPage .wave-two {
+
+    bottom: 15%;
+
+    height: 150px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,0.34) 0%,
+            rgba(80,210,230,0.18) 40%,
+            transparent 72%
+        );
+
+    filter: blur(2px);
+
+    animation:
+        oceanWave2 6s ease-in-out infinite;
+}
+
+
+/* WAVE THREE */
+
+#secondPage .wave-three {
+
+    bottom: 2%;
+
+    height: 125px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255,255,255,0.48) 0%,
+            rgba(80,200,225,0.22) 42%,
+            transparent 75%
+        );
+
+    filter: blur(2px);
+
+    animation:
+        oceanWave3 4.8s ease-in-out infinite;
+}
+
+
+/* ========================================
+   WAVE FOAM
+======================================== */
+
+#secondPage .ocean-wave::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+
+    top: 45%;
+
+    width: 84%;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.32);
+
+    filter: blur(4px);
+}
+
+
+/* ========================================
+   DOLPHINS
+======================================== */
+
+#secondPage .dolphin {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 5px 6px rgba(0,0,0,0.28)
+        );
+
+    animation:
+        dolphinJump 3.8s ease-in-out forwards;
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+#secondPage .dolphin.small {
+
+    font-size: 40px;
+}
+
+
+#secondPage .dolphin.medium {
+
+    font-size: 56px;
+}
+
+
+#secondPage .dolphin.large {
+
+    font-size: 72px;
+}
+
+
+/* ========================================
+   DOLPHIN SPLASH
+======================================== */
+
+#secondPage .dolphin-splash {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 24px;
+
+    margin-left: -45px;
+
+    margin-top: -12px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(255,255,255,0.72);
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,0.35),
+        inset 0 0 10px rgba(255,255,255,0.25);
+
+    opacity: 0;
+
+    animation:
+        splashRing 0.9s ease-out forwards;
+}
+
+
+/* ========================================
+   OCEAN ANIMATIONS
+======================================== */
+
+@keyframes oceanBreathing {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(6px)
+            scaleX(1);
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px)
+            scaleX(1.015);
+    }
+}
+
+
+@keyframes oceanWave1 {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(-7%)
+            translateY(5px)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateX(7%)
+            translateY(-10px)
+            rotate(1deg);
+    }
+}
+
+
+@keyframes oceanWave2 {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(8%)
+            translateY(2px)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateX(-8%)
+            translateY(-12px)
+            rotate(-1deg);
+    }
+}
+
+
+@keyframes oceanWave3 {
+
+    0%,
+    100% {
+
+        transform:
+            translateX(-9%)
+            translateY(4px);
+    }
+
+    50% {
+
+        transform:
+            translateX(9%)
+            translateY(-9px);
+    }
+}
+
+
+/* ========================================
+   DOLPHIN JUMP
+======================================== */
+
+@keyframes dolphinJump {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(65px)
+            rotate(18deg)
+            scale(.82);
+    }
+
+    8% {
+
+        opacity: 1;
+    }
+
+    28% {
+
+        transform:
+            translateY(-80px)
+            rotate(-12deg)
+            scale(1);
+    }
+
+    48% {
+
+        transform:
+            translateY(-235px)
+            rotate(-32deg)
+            scale(1.05);
+    }
+
+    63% {
+
+        transform:
+            translateY(-175px)
+            rotate(-8deg)
+            scale(1);
+    }
+
+    78% {
+
+        transform:
+            translateY(-70px)
+            rotate(18deg)
+            scale(.96);
+    }
+
+    90% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(55px)
+            rotate(34deg)
+            scale(.82);
+    }
+}
+
+
+/* ========================================
+   SPLASH ANIMATION
+======================================== */
+
+@keyframes splashRing {
+
+    0% {
+
+        opacity: .75;
+
+        transform: scale(.25);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform: scale(1.8);
+    }
+}
+
+
+/* ========================================
+   GENERAL ANIMATIONS
+======================================== */
+
+@keyframes waveFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(2deg);
+    }
+}
+
+
+@keyframes imageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.85);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+@keyframes loveAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .card {
+
+        width: 92%;
+
+        padding: 42px 22px;
+
+        border-radius: 30px;
+    }
+
+
+    h1 {
+
+        font-size: 36px;
+    }
+
+
+    .sub-text {
+
+        font-size: 20px;
+    }
+
+
+    .buttons {
+
+        gap: 12px;
+    }
+
+
+    button {
+
+        font-size: 20px;
+
+        padding: 12px 24px;
+    }
+
+
+    #answer {
+
+        font-size: 36px;
+    }
+
+
+    #whereBtn {
+
+        font-size: 20px;
+    }
+
+
+    .palm {
+
+        font-size: 90px;
+
+        opacity: 0.15;
+    }
+
+
+    .floating-name {
+
+        font-size: 22px;
+    }
+
+
+    .second-card {
+
+        width: 92%;
+
+        padding: 38px 20px;
+    }
+
+
+    .second-card h2 {
+
+        font-size: 35px;
+    }
+
+
+    #imageRevealBtn .wave {
+
+        font-size: 52px;
+    }
+
+
+    #locationImage {
+
+        width: 90vw;
+
+        max-width: 380px;
+
+        height: 280px;
+    }
+
+
+    #loveMessage {
+
+        font-size: 26px;
+
+        margin-top: 20px;
+    }
+
+
+    /* MOBILE DOLPHINS */
+
+    #secondPage .dolphin.small {
+
+        font-size: 32px;
+    }
+
+
+    #secondPage .dolphin.medium {
+
+        font-size: 45px;
+    }
+
+
+    #secondPage .dolphin.large {
+
+        font-size: 58px;
+    }
+}
